@@ -1,0 +1,175 @@
+/* =========================================
+   1. VARIABLES Y BASE
+   ========================================= */
+:root {
+    --favex-green: #5C723B;
+    --favex-green-dark: #4a5c2f;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --satin-gradient: linear-gradient(135deg, #e0e0e0 0%, #f8f8f8 50%, #dcdcdc 100%);
+    --font-main: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    height: 100vh;     /* Corregido de 110vh a 100vh para evitar scroll innecesario */
+    overflow: hidden;  /* Diseño tipo App sin scroll */
+}
+
+/* Clases de utilidad */
+.h-100vh { height: 100vh; }
+.display-lg-6 { font-size: 2.5rem; } 
+
+/* =========================================
+   2. CONTENEDOR INTELIGENTE
+   ========================================= */
+.container-favex {
+    width: 100%; 
+    max-width: 1440px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+@media (min-width: 992px) { .container-favex { padding: 0 80px; } }
+@media (min-width: 1400px) { .container-favex { padding: 0 120px; } }
+
+/* =========================================
+   3. ELEMENTOS UI (Escritorio por defecto)
+   ========================================= */
+
+/* --- CARRUSEL --- */
+.carousel-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 100%);
+    z-index: 1; pointer-events: none;
+}
+.carousel-item img { filter: brightness(0.9); }
+
+/* --- GLASS CARD --- */
+.glass-card {
+    background: var(--glass-bg); backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border);
+    border-radius: 16px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); color: white;
+}
+.glass-card h1 { line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+/* --- BOTONES --- */
+.btn-favex {
+    padding: 10px 0; width: 100%; max-width: 260px;
+    font-weight: 600; border-radius: 8px; text-align: center; transition: transform 0.2s;
+}
+.btn-green { background-color: var(--favex-green); border: 1px solid var(--favex-green); color: white; }
+.btn-outline-glass { background: rgba(255,255,255,0.85); color: #555; border: none; }
+
+/* --- NAVBAR PILLS (Botones menú escritorio) --- */
+.nav-pill-custom {
+    display: flex; align-items: center; justify-content: center;
+    width: 150px; padding: 8px 0; border-radius: 50px;
+    border: 1.5px solid var(--favex-green); color: var(--favex-green) !important;
+    background: transparent; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;
+}
+.nav-pill-custom:hover { background-color: rgba(92, 114, 59, 0.1); transform: translateY(-1px); }
+.nav-pill-custom.active { background-color: var(--favex-green) !important; color: white !important; box-shadow: 0 4px 6px rgba(92, 114, 59, 0.25); }
+
+/* --- FOOTER DESKTOP --- */
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+
+.footer-logo-item {
+    /* ALTURA AUMENTADA A 100px */
+    height: 80px; 
+    display: flex; align-items: center; justify-content: center;
+    padding: 5px; /* Espacio interno para que el logo respire */
+    background-color: rgba(255,255,255,0.8); /* Fondo blanco sutil para resaltar logos */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-logo-item img { 
+    height: 100%; 
+    width: auto; 
+    object-fit: contain; 
+    /* Permitimos que el ancho crezca proporcionalmente */
+    max-width: 200px; 
+}
+
+.footer-bar-satin {
+    background: var(--satin-gradient); color: #333; font-weight: 600; font-size: 1rem;
+    
+    /* ALTURA AUMENTADA PARA COINCIDIR CON LOGOS */
+    height: 80px; 
+    
+    padding: 0 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* =========================================
+   4. RESPONSIVIDAD  (Móvil + Tablet)*/
+  
+@media (max-width: 1399.98px) {
+    
+    /* A. MENÚ DESPLEGABLE CORRECTO */
+    .navbar-collapse {
+        position: fixed; /* Fijo a la pantalla, no al contenedor */
+        top: 70px; /* Justo debajo del navbar */
+        left: 0;
+        width: 100%; /* Ancho total */
+        background: white;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 9999;
+    }
+
+    /* B. BOTONES DE MENÚ GRANDES (Touch Friendly) */
+    .navbar-nav .nav-pill-custom {
+        width: 100%; /* Botón ancho total */
+        margin-bottom: 10px;
+        padding: 15px 20px;
+        border-radius: 12px;
+        justify-content: flex-start; /* Texto a la izquierda */
+        font-size: 1.1rem;
+        background-color: #f8f9fa;
+        border: 1px solid transparent;
+        color: #333 !important;
+    }
+    
+    .nav-pill-custom.active {
+        background-color: var(--favex-green) !important;
+        color: white !important;
+    }
+    
+    .nav-pill-custom i { margin-right: 15px; font-size: 1.3rem; }
+
+    /* C. FOOTER COMPACTO (Pero legible) */
+    .footer-logo-item { height: 80px; padding: 5px; } 
+    .footer-bar-satin { height: 80px; font-size: 0.8rem; padding: 0 10px; }
+    
+    /* Footer siempre fijo abajo */
+    footer.fixed-bottom { 
+        position: fixed !important; 
+        bottom: 0; 
+        padding-bottom: 15px !important;
+        /* Fondo de seguridad por si la imagen es muy clara */
+        background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%); 
+    }
+    
+    /* D. TARJETA HERO */
+  
+    .glass-card { 
+        margin-bottom: 90px; 
+        padding: 1.5rem !important; 
+    }
+    /* Texto responsivo */
+    .small-text { font-size: 0.9rem; margin-bottom: 1rem !important;}
+    .small-btn { padding: 10px 0; font-size: 1rem; }
+}
+
+/* Ajuste específico para móviles muy pequeños (iPhone SE, etc) */
+@media (max-width: 380px) {
+    .glass-card h1 { font-size: 1.5rem; }
+    .footer-logo-item { height: 35px; }
+    .footer-bar-satin { display: none; } /* Ocultar barra de texto si no cabe */
+}
