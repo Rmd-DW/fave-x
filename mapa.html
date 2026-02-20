@@ -47,21 +47,24 @@
 
 
     <main class="container-favex pt-5 mt-5 pb-5">
-        <h1 class=" text-left mt-5 mb-4"> Mapa de identificación de áreas prioritarias</h1>
+        <h1 class=" fs-2 text-left mt-5 mb-4"> Mapa de identificación de áreas prioritarias</h1>
 
         <div class="row g-4 mt-2">
 
-            <div class="col-12 col-lg-4 col-xl-3">
+            <div class="col-12 col-lg-4 col-xl-2">
 
                 <div class="sage-card p-4 rounded-1 shadow-sm border-0 mb-4 text-white">
-                    <h2 class="h5 fw-bold mb-3">Mapa de identificación de áreas prioritarias</h2>
-                    <p class="small mb-0 opacity-90 fw-light">
-                        Descripción
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-map fs-4 me-2"></i>
+                        <h2 class="h6 fw-bold mb-0">Visualización</h2>
+                    </div>
+                    <p class="small mb-0 opacity-90 fw-light lh-base">
+                    indicadores de valor ecológico,amenazas y niveles de protección sobre el territorio.
                     </p>
                 </div>
 
                 <div class="sticky-top" style="top: 90px; z-index: 1;">
-                    <label class="form-label fw-bold text-dark mb-2 fs-5">Seleccionar el tipo de documento</label>
+
 
                     <select id="docFilter"
                         class="form-select form-select-lg border shadow-sm rounded-1 py-3 text-secondary"
@@ -72,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-lg-8 col-xl-9">
+            <div class="col-12 col-lg-8 col-xl-10">
 
                 <div class="bg-gray-panel p-4 p-lg-5 rounded-2 h-100" height="100%">
 
@@ -83,21 +86,34 @@
         </div>
     </main>
 
-   <footer class="bg-white border-top py-4 mt-auto">
+    <footer class="bg-white border-top py-5 mt-auto">
+        <div class="container-favex">
+            <div class="row gy-4 align-items-center justify-content-between">
 
-  
-        <!-- <div class="container-favex">
-            <div class="row align-items-center gy-3">
-                <div class="col-12 col-md-auto text-center text-md-start">
-                    <img src="./assets/logos_stakeholders/Color_MinAmbiente 1.png" height="40" class="me-3" alt="Logo">
-                    <img src="./assets/logos_stakeholders/FBN_1 1.png" height="40" class="me-3" alt="Logo">
-                    <img src="./assets/logos_stakeholders/escudo-uchile-vertical-color 1.png" height="40" alt="Logo">
+                <div class="col-12 col-lg-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="px-3 py-2 border-start border-success border-4 bg-light rounded-end shadow-sm">
+                            <span class="fw-bold text-dark h5 mb-0">FAVE CHILE</span>
+                        </div>
+                        <div class="text-muted small lh-sm">
+                            Piloto regional — Proyecto CONAF <br>
+                            <strong>Fondo de Investigación del Bosque Nativo</strong>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md text-center text-md-end">
-                    <p class="small text-muted mb-0 fw-bold">Piloto regional - Proyecto CONAF - Fondo de conservación bosque nativo</p>
+
+                <div class="col-12 col-lg-6">
+                    <div class="p-3 bg-light rounded-3 border border-light-subtle shadow-sm">
+                        <p class="mb-0 text-muted" style="font-size: 0.85rem; line-height: 1.4;">
+                            <i class="bi bi-info-circle-fill me-2 text-success opacity-50"></i>
+                            La plataforma constituye un insumo técnico de apoyo a la planificación y no reemplaza
+                            procesos normativos ni decisiones administrativas.
+                        </p>
+                    </div>
                 </div>
+
             </div>
-        </div> -->
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -4,17 +4,17 @@
 const docsData = {
     articulos: [
         { 
-            title: "Libro Rojo de la Flora Nativa: Región de Coquimbo", 
+            title: "Libro Rojo de la Flora Nativa:<br> Región de Coquimbo", 
             desc: "Descripción del estado de conservación.", 
             archivo: "LIBRO ROJO DE LA FLORA NATIVA_COQUIMBO.pdf" 
         },
         { 
-            title: "Libro Rojo de la Flora Nativa: Región de Atacama", 
+            title: "Libro Rojo de la Flora Nativa: <br> Región de Atacama", 
             desc: "Descripción detallada de la región.",
             archivo: "LIBRO ROJO DE LA FLORA NATIVA_ATACAMA.pdf" 
         },   
         { 
-            title: "Efecto del riego y la poda en la captura de niebla", 
+            title: "Efecto del riego y la poda <br> en la captura de niebla", 
             desc: "Estudio sobre formaciones xerofíticas.",
             archivo: "Vista de Efecto del riego y la poda en la habilidad de captura de niebla de formaciones xerofíticas chilenas.pdf" 
         }
