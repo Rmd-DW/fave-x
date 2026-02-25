@@ -3,7 +3,9 @@
    ========================================= */
 :root {
     --favex-green: #5C723B;
+    --fave-green-gray:#7c8372;
     --favex-green-dark: #4a5c2f;
+    --fave-green-light: #C9CEC1;
     --glass-bg: rgba(255, 255, 255, 0.15);
     --glass-border: rgba(255, 255, 255, 0.3);
     --satin-gradient: linear-gradient(135deg, #e0e0e0 0%, #f8f8f8 50%, #dcdcdc 100%);
@@ -43,7 +45,7 @@ body {
 
 h1 {
     font-weight: 700;
-    color: var(--favex-green);
+    color: var(--fave-green-gray);
 
 }
 
@@ -243,10 +245,11 @@ h1 {
    5. SECCIÓN DOCUMENTOS (Específicos)
    ========================================= */
 
-/* Tarjeta Verde Grisácea (Sidebar) */
+/* Tarjeta Verde Sidebar */
 .sage-card {
-    background-color: var(--favex-green);
+    background-color: var(--fave-green-gray);
     min-height: 220px;
+    
 }
 
 .sage-card-2 {

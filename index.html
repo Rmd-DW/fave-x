@@ -12,17 +12,21 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="./assets/favicon/favicon.png">
 </head>
 
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-xxl bg-white fixed-top py-2 py-lg-3 shadow-sm" style="height: 70px;">
+    <nav class="navbar navbar-expand-xxl bg-white fixed-top py-2 py-lg-3 shadow-sm" style="height: 90px;">
         <div class="container-favex d-flex justify-content-between align-items-center w-100">
 
             <a class="navbar-brand p-0" href="index.html">
-                <img src="./assets/logo/logotipo-primary.svg" alt="FAVE-X" height="20">
+                <img src="./assets/logotipo-primary/logotipo-primary.svg" alt="FAVE-X" height="60">
             </a>
 
             <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
@@ -49,9 +53,9 @@
         class="position-relative h-100vh w-100 d-flex flex-column justify-content-center align-items-center overflow-hidden">
 
         <div id="heroCarousel" class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100"
-            data-bs-ride="carousel" style="z-index: 0;">
+            data-bs-ride="carousel" data-bs-pause="false" style="z-index: 0;">
             <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100" data-bs-interval="4000">
+                <div class="carousel-item active h-100" data-bs-interval="5000">
                     <img src="./assets/imagenes/carrusel/img1.jpg" class="d-block w-100 h-100 object-fit-cover"
                         alt="Fondo 1">
                 </div>
@@ -63,7 +67,7 @@
                     <img src="./assets/imagenes/carrusel/img-3.jpg" class="d-block w-100 h-100 object-fit-cover"
                         alt="Fondo 2">
                 </div>
-                 <div class="carousel-item h-100" data-bs-interval="4000">
+                <div class="carousel-item h-100" data-bs-interval="4000">
                     <img src="./assets/imagenes/carrusel/img-4.jpg" class="d-block w-100 h-100 object-fit-cover"
                         alt="Fondo 2">
                 </div>
@@ -98,37 +102,39 @@
     </main>
 
     <footer class="fixed-bottom bg-transparent pb-3 pb-lg-4" style="z-index: 10;">
-    <div class="container-favex">
-        <div class="row align-items-end gy-2 gx-2">
-            
-            <div class="col-12 col-lg-auto pointer-events-auto">
-                <div class="d-flex align-items-center gap-2 justify-content-center justify-content-lg-start mobile-footer-logos">
-                    <div class="footer-logo-item">
-                        <img src="./assets/logos_stakeholders/Color_MinAmbiente 1.png" alt="Ministerio">
-                    </div>
-                    <div class="footer-logo-item bg-white p-1 rounded-1 shadow-sm">
-                        <img src="./assets/logos_stakeholders/FBN_1 1.png" alt="Fondo">
-                    </div>
-                    <div class="footer-logo-item bg-white p-1 rounded-1 shadow-sm">
-                        <img src="./assets/logos_stakeholders/escudo-uchile-vertical-color 1.png" alt="Sello">
-                    </div>
-                    <div class="footer-logo-item bg-white p-1 rounded-1 shadow-sm">
-                        <img src="./assets/logos_stakeholders/logo-ieb.png" alt="Sello IEB">
+        <div class="container-favex">
+            <div class="row align-items-end gy-2 gx-2">
+
+                <div class="col-12 col-lg-auto pointer-events-auto">
+                    <div
+                        class="d-flex align-items-center gap-2 justify-content-center justify-content-lg-start mobile-footer-logos">
+                        <div class="footer-logo-item">
+                            <img src="./assets/logos_stakeholders/Color_MinAmbiente 1.png" alt="Ministerio">
+                        </div>
+                        <div class="footer-logo-item bg-white p-1 rounded-1 shadow-sm">
+                            <img src="./assets/logos_stakeholders/FBN_1 1.png" alt="Fondo">
+                        </div>
+                        <div class="footer-logo-item bg-white p-1 rounded-1 shadow-sm">
+                            <img src="./assets/logos_stakeholders/escudo-uchile-vertical-color 1.png" alt="Sello">
+                        </div>
+                        <div class="footer-logo-item bg-white p-1 rounded-1 shadow-sm">
+                            <img src="./assets/logos_stakeholders/logo-ieb.png" alt="Sello IEB">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-lg pointer-events-auto">
-                <div class="footer-bar-satin d-flex align-items-center justify-content-center text-center w-100 shadow-sm">
-                    <span class="text-truncate mobile-footer-text px-3">
-                        Piloto regional - Proyecto CONAF - Fondo de conservación bosque nativo
-                    </span>
+                <div class="col-12 col-lg pointer-events-auto">
+                    <div
+                        class="footer-bar-satin d-flex align-items-center justify-content-center text-center w-100 shadow-sm">
+                        <span class="text-truncate mobile-footer-text px-3">
+                            Piloto regional - Proyecto CONAF - Fondo de conservación bosque nativo
+                        </span>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

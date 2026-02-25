@@ -87,7 +87,7 @@ function renderDocuments(category) {
                         <div class="card-body p-4 text-center d-flex flex-column align-items-center">
                             
                             <h5 class="fw-bold mb-3 fs-6">${item.title}</h5>
-                            <p class="text-dark small mb-4 text-start w-100">${item.desc}</p>
+                            <p class="text-dark small mb-4 text-center w-100">${item.desc}</p>
                             
                             <a href="${rutaFinal}" 
                                class="btn btn-sage w-100 mt-auto btn-sm text-white" 
