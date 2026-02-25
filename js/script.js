@@ -50,52 +50,43 @@ const docsData = {
 /* ==========================================================================
    2. REFERENCIAS Y LÓGICA
    ========================================================================== */
-const filterSelect = document.getElementById('docFilter');
+const dropdownButton = document.getElementById('dropdownMenuButton');
+const dropdownItems = document.querySelectorAll('#docFilterContainer .dropdown-item');
 const sectionTitle = document.getElementById('sectionTitle');
 const cardsContainer = document.getElementById('cardsContainer');
 
-// MAPA DE CARPETAS:
-// Relaciona la categoría (código) con el Nombre Real de la Carpeta (Explorador)
 const folderMap = {
-    articulos: "Articulos",    // value="articulos" -> Carpeta "Articulos"
-    eia: "EIA",                // value="eia"       -> Carpeta "EIA"
-    informes: "Informes",      // value="informes"  -> Carpeta "Informes"
-    normativos: "Normativos"   // value="normativos"-> Carpeta "Normativos"
+    articulos: "Articulos",
+    eia: "EIA",
+    informes: "Informes",
+    normativos: "Normativos"
 };
 
-function renderDocuments(category) {
-    const selectedOptionText = filterSelect.options[filterSelect.selectedIndex].text;
-    sectionTitle.textContent = selectedOptionText;
+function renderDocuments(category, categoryName) {
+    if (categoryName) sectionTitle.textContent = categoryName;
     cardsContainer.innerHTML = '';
     
-    // 1. Obtenemos los datos
     const items = docsData[category];
-    
-    // 2. Obtenemos el nombre correcto de la subcarpeta
     const subCarpeta = folderMap[category];
 
     if (items && items.length > 0) {
         items.forEach(item => {
-            
-            // 3. Construimos la ruta CORRECTA incluyendo la subcarpeta
-            // Ruta: ./assets/PDF/NombreSubcarpeta/NombreArchivo.pdf
             const rutaFinal = `./assets/PDF/${subCarpeta}/${item.archivo}`;
 
             const cardHTML = `
-                <div class="col-12 col-md-6">
-                    <div class="card h-100 border border-dark border-opacity-25 rounded-2 shadow-sm doc-card bg-white">
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="card h-100 border border-dark border-opacity-10 rounded-2 shadow-sm doc-card bg-white">
                         <div class="card-body p-4 text-center d-flex flex-column align-items-center">
-                            
                             <h5 class="fw-bold mb-3 fs-6">${item.title}</h5>
                             <p class="text-dark small mb-4 text-center w-100">${item.desc}</p>
                             
-                            <a href="${rutaFinal}" 
-                               class="btn btn-sage w-100 mt-auto btn-sm text-white" 
-                               download="${item.archivo}" 
-                               target="_blank">
-                               Descargar
-                            </a>
-
+                             <a href="${rutaFinal}" 
+                             class="btn-favex btn-green w-100 mt-auto btn-sm text-white py-2" 
+                             style="border: none; border-radius: 4px; text-decoration: none;"
+                             download="${item.archivo}" 
+                             target="_blank">
+                             Descargar
+                          </a>
                         </div>
                     </div>
                 </div>
@@ -107,8 +98,25 @@ function renderDocuments(category) {
     }
 }
 
-filterSelect.addEventListener('change', (e) => {
-    renderDocuments(e.target.value);
+/* ==========================================================================
+   3. EVENTOS
+   ========================================================================== */
+dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = item.getAttribute('data-value');
+        const text = item.textContent;
+
+        if(dropdownButton) dropdownButton.textContent = text;
+        
+        dropdownItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        renderDocuments(category, text);
+    });
 });
 
-renderDocuments('articulos');
+// Carga inicial al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    renderDocuments('articulos', 'Artículos');
+});

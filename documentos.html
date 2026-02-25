@@ -70,18 +70,34 @@
 
                 <div class="sticky-top" style="top: 90px; z-index: 1;">
 
-                    <select id="docFilter"
+                    <!-- <select id="docFilter"
                         class="form-select form-select-lg border-success shadow-sm rounded-1 py-3 text-secondary focus-ring focus-ring-success"
                         style="font-size: 1rem; --bs-focus-ring-shadow: 0 0 0 0.25rem rgba(92, 114, 59, 0.25);">
                         <option value="articulos" selected>Artículos</option>
                         <option value="eia">EIA</option>
                         <option value="informes">Informes técnicos</option>
                         <option value="normativos">Normativos</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-8 col-xl-10">
+                    </select> -->
+                    <div class="sticky-top" style="top: 90px; z-index: 1;">
+                        <div class="dropdown w-100" id="docFilterContainer">
+                            <button
+                                class="btn btn-outline-success dropdown-toggle w-100 text-start py-3 shadow-sm rounded-1 text-secondary d-flex justify-content-between align-items-center"
+                                type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
+                                style="font-size: 1rem; border-color: #198754; background-color: white;">
+                                Artículos
+                            </button>
+                            <ul class="dropdown-menu w-100 shadow-sm border-success rounded-1" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item active" href="#" data-value="articulos">Artículos</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="eia">EIA</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="informes">Informes técnicos</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="normativos">Normativos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <div class="col-12 col-lg-8 col-xl-10">
 
                 <div class="bg-gray-panel p-4 p-lg-5 rounded-2 h-100">
 

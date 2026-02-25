@@ -132,6 +132,29 @@ h1 {
     border: 2px solid var(--favex-green-dark);
 }
 
+
+
+/* Color de fondo para el item seleccionado y al pasar el mouse */
+#docFilterContainer .dropdown-item:hover,
+#docFilterContainer .dropdown-item:focus,
+#docFilterContainer .dropdown-item.active {
+    background-color: #198754 !important; /* Tu color específico */
+    color: white !important;
+    outline: none;
+}
+
+/* Borde y sombra de enfoque (focus-ring) con el nuevo color */
+#dropdownMenuButton:focus {
+    border-color: #198754 !important;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
+}
+
+/* Estilo para el botón cuando está abierto */
+.show > .btn-outline-success.dropdown-toggle {
+    background-color: #198754 !important;
+    color: white !important;
+}
+
 /* Efectos HOVER para botones FAVE-X */
 
 /* Botón General: Efecto de elevación */
@@ -256,6 +279,8 @@ h1 {
     background-color: var(--sage-card-bg);
     min-height: 220px;
 }
+
+
 
 
 /* Panel Gris de Fondo (Derecha) */
