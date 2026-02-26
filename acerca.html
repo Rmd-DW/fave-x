@@ -212,7 +212,7 @@
                     </div>
                 </div>
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/quebrada-blanca.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/quebrada-blanca.jpg"
                         class="card-img-top gallery-thumb" alt="Quebrada Blanca" data-bs-toggle="modal"
@@ -222,7 +222,7 @@
                     </div>
                 </div>
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/salar-ascotan.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/salar-ascotan.jpg"
                         class="card-img-top gallery-thumb" alt="Salar Ascotán" data-bs-toggle="modal"
@@ -232,7 +232,7 @@
                     </div>
                 </div>
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/salar-atacama.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/salar-atacama.jpg"
                         class="card-img-top gallery-thumb" alt="Salar Atacama" data-bs-toggle="modal"
@@ -242,7 +242,7 @@
                     </div>
                 </div>
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/salar-lagunilla.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/salar-lagunilla.jpg"
                         class="card-img-top gallery-thumb" alt="Salar Lagunilla" data-bs-toggle="modal"
@@ -253,7 +253,7 @@
                 </div>
 
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/subiendo-putre.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/subiendo-putre.jpg"
                         class="card-img-top gallery-thumb" alt="Subiendo Putre" data-bs-toggle="modal"
@@ -263,7 +263,7 @@
                     </div>
                 </div>
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/tierra amarilla.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/tierra amarilla.jpg"
                         class="card-img-top gallery-thumb" alt="Tierra Amarilla" data-bs-toggle="modal"
@@ -274,7 +274,7 @@
                 </div>
 
 
-                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
+                <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/vega-pascua.jpg"
                         data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/vega-pascua.jpg"
                         class="card-img-top gallery-thumb" alt="Vega Pascua" data-bs-toggle="modal"
@@ -326,26 +326,40 @@
         </div>
     </footer>
 
+
+
+
+
     <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
             <div class="modal-content bg-transparent border-0 position-relative">
+
                 <div class="modal-header border-0 pb-0 justify-content-end position-absolute top-0 end-0 z-3">
                     <button type="button" class="btn-close btn-close-white shadow-none m-2" data-bs-dismiss="modal"
                         aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
                 </div>
-                <div class="modal-body text-center p-0 mt-2 position-relative d-flex align-items-center justify-content-center"
+
+                <div class="modal-body p-0 d-flex flex-column align-items-center justify-content-center text-center"
                     style="min-height: 50vh;">
-                    <div id="imageLoadingSpinner" class="spinner-border text-light position-absolute z-1" role="status"
-                        style="width: 3rem; height: 3rem;">
-                        <span class="visually-hidden">Cargando...</span>
+
+                    <div class="position-relative d-flex align-items-center justify-content-center w-100">
+
+                        <div id="imageLoadingSpinner" class="spinner-border text-light position-absolute z-1"
+                            role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+
+                        <img id="expandedGalleryImg" src=""
+                            class="img-fluid rounded-2 shadow-lg d-none position-relative z-2" alt="Imagen ampliada"
+                            style="max-height: 85vh; cursor: pointer;" data-bs-dismiss="modal">
                     </div>
-                    <img id="expandedGalleryImg" src=""
-                        class="img-fluid rounded-2 shadow-lg d-none position-relative z-2" alt="Imagen ampliada"
-                        style="max-height: 85vh; cursor: pointer;" data-bs-dismiss="modal"> style="max-height: 85vh;">
+
                 </div>
+
             </div>
         </div>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/acerca_de.js"></script>

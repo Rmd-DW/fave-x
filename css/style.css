@@ -3,7 +3,7 @@
    ========================================= */
 :root {
     --favex-green: #5C723B;
-    --fave-green-gray:#7c8372;
+    --fave-green-gray: #7c8372;
     --favex-green-dark: #4a5c2f;
     --fave-green-light: #C9CEC1;
     --glass-bg: rgba(255, 255, 255, 0.15);
@@ -53,10 +53,10 @@ h1 {
    2. CONTENEDOR MAESTRO
    ========================================= */
 .container-favex {
-    width: 100%; 
-    max-width: 100% !important; 
-    margin: 0; 
-    padding: 0 16px; 
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0;
+    padding: 0 16px;
 }
 
 @media (min-width: 992px) {
@@ -138,7 +138,8 @@ h1 {
 #docFilterContainer .dropdown-item:hover,
 #docFilterContainer .dropdown-item:focus,
 #docFilterContainer .dropdown-item.active {
-    background-color: #198754 !important; /* Tu color específico */
+    background-color: #198754 !important;
+    /* Tu color específico */
     color: white !important;
     outline: none;
 }
@@ -150,7 +151,7 @@ h1 {
 }
 
 /* Estilo para el botón cuando está abierto */
-.show > .btn-outline-success.dropdown-toggle {
+.show>.btn-outline-success.dropdown-toggle {
     background-color: #198754 !important;
     color: white !important;
 }
@@ -272,7 +273,7 @@ h1 {
 .sage-card {
     background-color: var(--fave-green-gray);
     min-height: 220px;
-    
+
 }
 
 .sage-card-2 {
@@ -286,9 +287,12 @@ h1 {
 
 /* Configuración del contenedor deslizable */
 .custom-slider {
-    scroll-behavior: smooth; /* Movimiento suave al hacer clic en las flechas */
-    scroll-snap-type: x mandatory; /* Hace que las tarjetas "encajen" perfectamente al detenerse */
-    scrollbar-width: none; /* Oculta la barra en Firefox */
+    scroll-behavior: smooth;
+    /* Movimiento suave al hacer clic en las flechas */
+    scroll-snap-type: x mandatory;
+    /* Hace que las tarjetas "encajen" perfectamente al detenerse */
+    scrollbar-width: none;
+    /* Oculta la barra en Firefox */
 }
 
 /* Oculta la barra de scroll en Chrome/Safari/Edge */
@@ -298,20 +302,24 @@ h1 {
 
 /* Las tarjetas del carrusel */
 .custom-slider .card {
-    scroll-snap-align: start; /* Punto de encaje */
+    scroll-snap-align: start;
+    /* Punto de encaje */
     transition: transform 0.2s ease;
 }
 
 .custom-slider .card:hover {
-    transform: translateY(-3px); /* Pequeña elevación al pasar el mouse */
+    transform: translateY(-3px);
+    /* Pequeña elevación al pasar el mouse */
 }
 
 /* La imagen de la tarjeta (Miniatura) */
 .gallery-thumb {
-    height: 180px; /* Alto fijo para que todas se vean parejas */
+    height: 180px;
+    /* Alto fijo para que todas se vean parejas */
     object-fit: cover;
     cursor: pointer;
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Separador sutil */
 }
 
 
