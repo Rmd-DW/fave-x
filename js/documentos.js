@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. CONFIGURACIÓN Y DATOS
-   ========================================================================== */
+
 const docsData = {
     articulos: [
         { 
@@ -47,13 +45,17 @@ const docsData = {
     ]
 };
 
-/* ==========================================================================
-   2. REFERENCIAS Y LÓGICA
-   ========================================================================== */
+
 const dropdownButton = document.getElementById('dropdownMenuButton');
 const dropdownItems = document.querySelectorAll('#docFilterContainer .dropdown-item');
 const sectionTitle = document.getElementById('sectionTitle');
 const cardsContainer = document.getElementById('cardsContainer');
+
+// Variables para el Modal de Previsualización
+let pdfModalInstance;
+const modalTitle = document.getElementById('pdfViewerModalLabel');
+const pdfIframe = document.getElementById('pdfIframe');
+const modalDownloadBtn = document.getElementById('modalDownloadBtn');
 
 const folderMap = {
     articulos: "Articulos",
@@ -72,21 +74,24 @@ function renderDocuments(category, categoryName) {
     if (items && items.length > 0) {
         items.forEach(item => {
             const rutaFinal = `./assets/PDF/${subCarpeta}/${item.archivo}`;
+            
+            const cleanTitle = item.title.replace(/<br>/g, ' ');
 
             const cardHTML = `
-                <div class="col-12 col-md-6 col-xl-4">
+                <div class="col-12 col-sm-6 col-xl-4">
                     <div class="card h-100 border border-dark border-opacity-10 rounded-2 shadow-sm doc-card bg-white">
-                        <div class="card-body p-4 text-center d-flex flex-column align-items-center">
+                        <div class="card-body p-3 p-md-4 text-center d-flex flex-column align-items-center">
                             <h5 class="fw-bold mb-3 fs-6">${item.title}</h5>
                             <p class="text-dark small mb-4 text-center w-100">${item.desc}</p>
                             
-                             <a href="${rutaFinal}" 
-                             class="btn-favex btn-green w-100 mt-auto btn-sm text-white py-2" 
-                             style="border: none; border-radius: 4px; text-decoration: none;"
-                             download="${item.archivo}" 
-                             target="_blank">
-                             Descargar
-                          </a>
+                            <button type="button" 
+                               class="btn-favex btn-green w-100 mt-auto btn-sm text-white py-2 d-flex align-items-center justify-content-center btn-preview-pdf" 
+                               style="border: none; border-radius: 4px; background-color: #5C723B;"
+                               data-url="${rutaFinal}"
+                               data-title="${cleanTitle}"
+                               data-filename="${item.archivo}">
+                                Previsualizar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -98,9 +103,9 @@ function renderDocuments(category, categoryName) {
     }
 }
 
-/* ==========================================================================
-   3. EVENTOS
-   ========================================================================== */
+
+
+// Evento para los botones del Dropdown
 dropdownItems.forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
@@ -116,7 +121,42 @@ dropdownItems.forEach(item => {
     });
 });
 
-// Carga inicial al cargar el DOM
+
+cardsContainer.addEventListener('click', (e) => {
+    
+    const btn = e.target.closest('.btn-preview-pdf');
+    
+    if (btn) {
+      
+        const pdfUrl = btn.getAttribute('data-url');
+        const pdfTitle = btn.getAttribute('data-title');
+        const pdfFilename = btn.getAttribute('data-filename');
+
+        
+        modalTitle.textContent = pdfTitle;
+        pdfIframe.src = pdfUrl;
+        
+       
+        modalDownloadBtn.href = pdfUrl;
+        modalDownloadBtn.download = pdfFilename;
+
+  
+        if (!pdfModalInstance) {
+            pdfModalInstance = new bootstrap.Modal(document.getElementById('pdfViewerModal'));
+        }
+        pdfModalInstance.show();
+    }
+});
+
+
+document.getElementById('pdfViewerModal').addEventListener('hidden.bs.modal', function () {
+    pdfIframe.src = ""; 
+});
+
+// Carga inicial
 document.addEventListener('DOMContentLoaded', () => {
     renderDocuments('articulos', 'Artículos');
 });
+
+
+

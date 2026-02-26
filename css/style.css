@@ -280,7 +280,42 @@ h1 {
     min-height: 220px;
 }
 
+/* =========================================
+  6. SECCION ACERCA DE 
+   ========================================= */
 
+/* Configuración del contenedor deslizable */
+.custom-slider {
+    scroll-behavior: smooth; /* Movimiento suave al hacer clic en las flechas */
+    scroll-snap-type: x mandatory; /* Hace que las tarjetas "encajen" perfectamente al detenerse */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+/* Oculta la barra de scroll en Chrome/Safari/Edge */
+.custom-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Las tarjetas del carrusel */
+.custom-slider .card {
+    scroll-snap-align: start; /* Punto de encaje */
+    transition: transform 0.2s ease;
+}
+
+.custom-slider .card:hover {
+    transform: translateY(-3px); /* Pequeña elevación al pasar el mouse */
+}
+
+/* La imagen de la tarjeta (Miniatura) */
+.gallery-thumb {
+    height: 180px; /* Alto fijo para que todas se vean parejas */
+    object-fit: cover;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
+}
+
+
+/* *********** */
 
 
 /* Panel Gris de Fondo (Derecha) */
