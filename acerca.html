@@ -244,7 +244,7 @@
 
                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
                     <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/salar-lagunilla.jpg"
-                        data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/salar-lagunilla.jpg"
+                        data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/salar-lagunillas.jpg"
                         class="card-img-top gallery-thumb" alt="Salar Lagunilla" data-bs-toggle="modal"
                         data-bs-target="#imageLightboxModal">
                     <div class="card-body p-2 text-center">
@@ -264,8 +264,8 @@
                 </div>
 
                 <div class="card border-0 bg-light shadow-sm flex-shrink-0" style="width: 220px;">
-                    <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/tierra amarilla.jpg"
-                        data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/tierra amarilla.jpg"
+                    <img src="./assets/imagenes/carrusel_acerca_de/imagenes-400x400/tierra-amarilla.jpg"
+                        data-large-src="./assets/imagenes/carrusel_acerca_de/imagenes-1920x1080/tierra-amarilla.jpg"
                         class="card-img-top gallery-thumb" alt="Tierra Amarilla" data-bs-toggle="modal"
                         data-bs-target="#imageLightboxModal">
                     <div class="card-body p-2 text-center">
@@ -328,38 +328,37 @@
 
 
 
+   <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
+    <div class="modal-content bg-transparent border-0 position-relative">
+      
+      <div class="modal-header border-0 pb-0 justify-content-end position-absolute top-0 end-0 z-3">
+        <button type="button" class="btn-close btn-close-white shadow-none m-2" data-bs-dismiss="modal"
+            aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+      </div>
+      
+      <div class="modal-body p-0 d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 50vh;">
+        <div class="position-relative d-flex align-items-center justify-content-center w-100 h-100">
+          
+          <button id="modalPrevBtn" class="btn btn-dark bg-opacity-50 text-white position-absolute start-0 z-3 ms-2 ms-md-4 rounded-circle border-0 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; backdrop-filter: blur(4px);">
+              <i class="bi bi-chevron-left fs-4"></i>
+          </button>
 
+          <div id="imageLoadingSpinner" class="spinner-border text-light position-absolute z-1" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+          
+          <img id="expandedGalleryImg" src="" class="img-fluid rounded-2 shadow-lg position-relative z-2" alt="Imagen ampliada" style="max-height: 85vh; cursor: pointer; opacity: 0;" data-bs-dismiss="modal">
 
-    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-lg-down">
-            <div class="modal-content bg-transparent border-0 position-relative">
+          <button id="modalNextBtn" class="btn btn-dark bg-opacity-50 text-white position-absolute end-0 z-3 me-2 me-md-4 rounded-circle border-0 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; backdrop-filter: blur(4px);">
+              <i class="bi bi-chevron-right fs-4"></i>
+          </button>
 
-                <div class="modal-header border-0 pb-0 justify-content-end position-absolute top-0 end-0 z-3">
-                    <button type="button" class="btn-close btn-close-white shadow-none m-2" data-bs-dismiss="modal"
-                        aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
-                </div>
-
-                <div class="modal-body p-0 d-flex flex-column align-items-center justify-content-center text-center"
-                    style="min-height: 50vh;">
-
-                    <div class="position-relative d-flex align-items-center justify-content-center w-100">
-
-                        <div id="imageLoadingSpinner" class="spinner-border text-light position-absolute z-1"
-                            role="status" style="width: 3rem; height: 3rem;">
-                            <span class="visually-hidden">Cargando...</span>
-                        </div>
-
-                        <img id="expandedGalleryImg" src=""
-                            class="img-fluid rounded-2 shadow-lg d-none position-relative z-2" alt="Imagen ampliada"
-                            style="max-height: 85vh; cursor: pointer;" data-bs-dismiss="modal">
-                    </div>
-
-                </div>
-
-            </div>
         </div>
+      </div>
     </div>
-
+  </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/acerca_de.js"></script>
