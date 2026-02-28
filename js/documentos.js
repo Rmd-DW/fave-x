@@ -33,7 +33,7 @@ const docsData = {
         { 
             title: "Catastro de formaciones xerofíticas", 
             desc: "Áreas prioritarias.",
-            archivo: "CATASTRO DE FORMACIONES XEROFÍTICAS EN ÁREAS PRIORITARIAS_200.pdf" 
+            archivo: "catastro-de-formaciones-xerofíticas-en-áreas-prioritarias-2009.pdf" 
         }
     ],
     normativos: [

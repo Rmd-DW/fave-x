@@ -229,7 +229,7 @@ h1 {
 
 
 /* =========================================
-   4. SECCIÓN HOME (Específicos)
+     HOME 
    ========================================= */
 
 /* Carrusel Fondo */
@@ -266,7 +266,25 @@ h1 {
 
 
 /* =========================================
-   5. SECCIÓN DOCUMENTOS (Específicos)
+   MAPA 
+   ========================================= */
+
+
+/* Color verde FAVE cuando el checkbox está marcado */
+.form-check-input:checked {
+    background-color: #198754 !important;
+    border-color:#198754 !important;
+}
+
+/* El halo de color (sombra) que aparece al hacerle clic */
+.form-check-input:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(92, 114, 59, 0.25);
+}
+
+
+/* =========================================
+   DOCUMENTOS 
    ========================================= */
 
 /* Tarjeta Verde Sidebar */
@@ -282,7 +300,7 @@ h1 {
 }
 
 /* =========================================
-  6. SECCION ACERCA DE 
+   ACERCA DE 
    ========================================= */
 
 /* Configuración del contenedor deslizable */
